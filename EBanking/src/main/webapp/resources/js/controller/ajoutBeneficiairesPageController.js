@@ -1,4 +1,5 @@
 app.controller('ajoutBeneficiairesPageController', function($scope, $http, $routeParams) {
+	$scope.nombre="10";
 	$scope.idClient = $routeParams.idClient;
 	$scope.beneficiaires = [];
 	$scope.beneficiaireForm = {

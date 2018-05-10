@@ -50,6 +50,26 @@ public class MainController {
 
 	}
 	
+	@RequestMapping(value = "/paginationTemplate", method = RequestMethod.GET)
+	public ModelAndView paginationTemplate() {
+
+		ModelAndView model = new ModelAndView();
+		model.setViewName("paginationTemplate");
+
+		return model;
+
+	}
+	
+	@RequestMapping(value = "/index/admin/getVirementsPage", method = RequestMethod.GET)
+	public ModelAndView getVirementsPage() {
+
+		ModelAndView model = new ModelAndView();
+		model.setViewName("getVirementsPage");
+
+		return model;
+
+	}
+	
 	@RequestMapping(value = "/index/admin/ajoutBeneficiairesPage", method = RequestMethod.GET)
 	public ModelAndView ajoutBeneficiairePage() {
 

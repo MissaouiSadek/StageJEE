@@ -1,4 +1,5 @@
 app.controller('getListeCmdChequierPageController', function($scope, $http) {
+	$scope.nombre="10";
 	$scope.$watch('idClient', function () {
 		_refreshCmdsChequier(); 
 	});

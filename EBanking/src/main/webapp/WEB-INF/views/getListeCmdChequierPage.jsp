@@ -8,6 +8,13 @@
         </div>
 </form>
 <br/>
+<select ng-model="nombre">
+	<option value=5>5</option>
+	<option value=10>10</option>
+	<option value=20>20</option>
+	<option value=50>50</option>
+	<option value=100>100</option>
+</select>
 <div class="table-responsive">
 	<table class="table table-striped table-bordered">
 	<thead>
@@ -18,7 +25,7 @@
 		</tr>
 	</thead>
 	<tbody>
-		<tr dir-paginate="cmdChequier in cmdsChequier |orderBy:sortKey:reverse|filter:search|itemsPerPage:10">
+		<tr dir-paginate="cmdChequier in cmdsChequier |orderBy:sortKey:reverse|filter:search|itemsPerPage:nombre">
 
 			<td>{{ cmdChequier.compte.rib }}</td>
 			<td>{{ cmdChequier.statut }}</td>
@@ -26,5 +33,5 @@
 		</tr>
 	</tbody>
 	</table>
-	<dir-pagination-controls max-size="10" direction-links="true" boundary-links="true" ></dir-pagination-controls>
+	<dir-pagination-controls template-url="paginationTemplate" max-size="10" direction-links="true" boundary-links="true" ></dir-pagination-controls>
 </div>

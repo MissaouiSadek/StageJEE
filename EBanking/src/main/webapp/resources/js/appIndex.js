@@ -45,6 +45,10 @@ app.config(function($routeProvider) {
         templateUrl : "index/admin/ajoutBeneficiairesPage",
         controller : "ajoutBeneficiairesPageController"
     })
+    .when("/virements", {
+        templateUrl : "index/admin/getVirementsPage",
+        controller : "getVirementsPageController"
+    })
     .otherwise({
         templateUrl : "index/introduction"
     });

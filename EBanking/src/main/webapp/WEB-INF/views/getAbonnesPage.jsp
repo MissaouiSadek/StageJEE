@@ -25,6 +25,13 @@
         </div>
 </form>
 <br/>
+<select ng-model="nombre">
+	<option value=5>5</option>
+	<option value=10>10</option>
+	<option value=20>20</option>
+	<option value=50>50</option>
+	<option value=100>100</option>
+</select>
 <div class="table-responsive">
 	<table class="table table-striped table-bordered">
 	<thead>
@@ -37,20 +44,21 @@
 		</tr>
 	</thead>
 	<tbody>
-		<tr dir-paginate="abonne in abonnes|orderBy:sortKey:reverse|filter:search|itemsPerPage:10">
+		<tr dir-paginate="abonne in abonnes|orderBy:sortKey:reverse|filter:search|itemsPerPage:nombre">
 
 			<td>{{ abonne.idClient }}</td>
 			<td>{{ abonne.codeAbonne }}</td>
 			<td>{{ abonne.passwordAbonne }}</td>
 			<td>{{ abonne.dateCreation }}</td>
-			<td><button ng-click="editAbonne(abonne)" class="btn btn-success custom-width">E</a></button></td> 
-			<td><button ng-click="getBenef(abonne.idClient)" class="btn btn-info custom-width">B</a></button></td>
-			<td><button ng-click="deleteAbonne(abonne)" class="btn btn-danger custom-width">S</a></button></td>
+			<td><button ng-click="editAbonne(abonne)" class="btn btn-success custom-width"><span class="fa fa-pencil"></span></button></td> 
+			<td><button ng-click="getBenef(abonne.idClient)" class="btn btn-info custom-width"><span class="fa fa fa-briefcase"></span></button></td>
+			<td><button ng-click="deleteAbonne(abonne)" class="btn btn-danger custom-width"><span class="fa fa-trash"></span></button></td>
 		</tr>
 	</tbody>
 	</table>
-	<dir-pagination-controls max-size="10" direction-links="true" boundary-links="true" ></dir-pagination-controls>
+	<dir-pagination-controls template-url="paginationTemplate" max-size="10" direction-links="true" boundary-links="true" ></dir-pagination-controls>
 </div>
+<br/>
 <div class="formcontainer">
 	<form ng-submit="submitAbonne()" name="myForm" class="form-horizontal" novalidate>
 		<table>
@@ -77,7 +85,7 @@
 			</tr>
 			<tr><td>&nbsp</td></tr>
 			<tr>
-				<td colspan="3"><input type="submit" value="Add/Edit" ng-disabled="myForm.$invalid" class="btn btn-primary btn-sm" />
+				<td><input type="submit" value="Add/Edit" ng-disabled="myForm.$invalid" class="btn btn-primary btn-sm" />
 				<button type="button" ng-click="reset()" class="btn btn-warning btn-sm">Réinitialiser</button></td>
 			</tr>
 		</table>

@@ -57,7 +57,7 @@ function formSubmit() {
         <sec:authorize access="hasRole('ROLE_ADMIN')">
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Mise à jour du mot de passe">
           <a class="nav-link" href="#!updatePasswordAdminPage">
-            <i class="fa fa-fw fa-link"></i>
+            <i class="fa fa-fw fa-unlock-alt"></i>
             <span class="nav-link-text">Mise à jour du mot de passe</span>
           </a>
         </li>
@@ -140,13 +140,13 @@ function formSubmit() {
               <span aria-hidden="true">—</span>
             </button>
           </div>
-          <div class="modal-body">Sélectionnez "Déconnexion" ci-dessous si vous êtes prêt Ã  terminer votre session en cours.</div>
+          <div class="modal-body">Sélectionnez "Déconnecter" ci-dessous si vous êtes prêt Ã  terminer votre session en cours.</div>
           <div class="modal-footer">
           	<c:url value="/logout" var="logoutUrl" />
           	<form action="${logoutUrl}" method="post" id="logoutForm">
           	<c:if test="${pageContext.request.userPrincipal.name != null}">
             <button class="btn btn-secondary" type="button" data-dismiss="modal">Annuler</button>
-            <a class="btn btn-primary" href="javascript:formSubmit()">Déconnexion</a>
+            <a class="btn btn-primary" href="javascript:formSubmit()">Déconnecter</a>
             </c:if>
             </form>
           </div>

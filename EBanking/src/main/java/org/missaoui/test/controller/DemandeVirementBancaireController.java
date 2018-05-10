@@ -24,7 +24,7 @@ public class DemandeVirementBancaireController {
 	@Autowired
 	AbonneService abonneService;
 
-	 @RequestMapping(value = "/abonne/updateStatut/{idDemandeVirementBancaire}&{newStatut}", method = RequestMethod.PUT, headers = "Accept=application/json")
+	 @RequestMapping(value = "/admin/updateStatut/{idDemandeVirementBancaire}&{newStatut}", method = RequestMethod.PUT, headers = "Accept=application/json")
 	 public void updateStatut(@PathVariable("idDemandeVirementBancaire") int idDemandeVirementBancaire, @PathVariable("newStatut") String newStatut) {  
 		 demandeVirementBancaireService.updateStatut(idDemandeVirementBancaire, newStatut);
 	 }

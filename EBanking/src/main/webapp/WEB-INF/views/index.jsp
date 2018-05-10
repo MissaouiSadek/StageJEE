@@ -13,6 +13,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <title>Index</title>
+  <script src="resources/js/dirPagination.js"></script>
   <!-- <link rel="stylesheet" href="https://cdn.gitcdn.link/cdn/angular/bower-material/v1.1.9/angular-material.css">  -->
   <link rel="stylesheet" href="resources/css/bootstrap.min.css"></link>
   <!-- Custom fonts for this template-->
@@ -55,27 +56,33 @@ function formSubmit() {
       	<sec:authorize access="hasRole('ROLE_ADMIN')">
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Liste des abonnes">
           <a class="nav-link" href="#!abonnes">
-            <i class="fa fa-fw fa-table"></i>
+            <i class="fa fa-fw fa-group"></i>
             <span class="nav-link-text">Liste des abonnes</span>
+          </a>
+        </li>
+      	<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Liste des virements">
+          <a class="nav-link" href="#!virements">
+            <i class="fa fa-fw fa-exchange"></i>
+            <span class="nav-link-text">Liste des virements</span>
           </a>
         </li>
         </sec:authorize>
         <sec:authorize access="hasRole('ROLE_USER')">
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Comptes">
           <a class="nav-link" href="#!comptes">
-            <i class="fa fa-fw fa-dashboard"></i>
+            <i class="fa fa-fw fa-bank"></i>
             <span class="nav-link-text">Comptes</span>
           </a>
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Bénéficiaires">
           <a class="nav-link" href="#!beneficiaires">
-            <i class="fa fa-fw fa-area-chart"></i>
+            <i class="fa fa-fw fa-group"></i>
             <span class="nav-link-text">Bénéficiaires</span>
           </a>
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Virements">
           <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents" data-parent="#exampleAccordion">
-            <i class="fa fa-fw fa-wrench"></i>
+            <i class="fa fa-fw fa-exchange"></i>
             <span class="nav-link-text">Virements</span>
           </a>
           <ul class="sidenav-second-level collapse" id="collapseComponents">
@@ -89,7 +96,7 @@ function formSubmit() {
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Commande Chéquier">
           <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseExamplePages" data-parent="#exampleAccordion">
-            <i class="fa fa-fw fa-file"></i>
+            <i class="fa fa-fw fa-money"></i>
             <span class="nav-link-text">Commande Chéquier</span>
           </a>
           <ul class="sidenav-second-level collapse" id="collapseExamplePages">
@@ -103,7 +110,7 @@ function formSubmit() {
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Commande Carte">
           <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseExamplePages2" data-parent="#exampleAccordion">
-            <i class="fa fa-fw fa-sitemap"></i>
+            <i class="fa fa-fw fa-credit-card"></i>
             <span class="nav-link-text">Commande Carte</span>
           </a>
           <ul class="sidenav-second-level collapse" id="collapseExamplePages2">
@@ -182,6 +189,7 @@ function formSubmit() {
       <div class="row">
         <div class="col-12" ng-view>
 			<script src="resources/js/controller/getAbonnesPageController.js"></script>
+			<script src="resources/js/controller/getVirementsPageController.js"></script>
 			<script src="resources/js/controller/getComptesPageController.js"></script>
 			<script src="resources/js/controller/getBeneficiairesPageController.js"></script>
 			<script src="resources/js/controller/setVirementIntraPageController.js"></script>
@@ -218,13 +226,13 @@ function formSubmit() {
               <span aria-hidden="true">—</span>
             </button>
           </div>
-          <div class="modal-body">Sélectionnez "Déconnexion" ci-dessous si vous êtes prêt à terminer votre session en cours.</div>
+          <div class="modal-body">Sélectionnez "Déconnecter" ci-dessous si vous êtes prêt à terminer votre session en cours.</div>
           <div class="modal-footer">
           	<c:url value="/logout" var="logoutUrl" />
           	<form action="${logoutUrl}" method="post" id="logoutForm">
           	<c:if test="${pageContext.request.userPrincipal.name != null}">
             <button class="btn btn-secondary" type="button" data-dismiss="modal">Annuler</button>
-            <a class="btn btn-primary" href="javascript:formSubmit()">Déconnexion</a>
+            <a class="btn btn-primary" href="javascript:formSubmit()">Déconnecter</a>
             </c:if>
             </form>
           </div>

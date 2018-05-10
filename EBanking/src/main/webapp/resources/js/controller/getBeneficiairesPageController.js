@@ -1,4 +1,5 @@
 app.controller('getBeneficiairesPageController', function($scope, $http) {
+	$scope.nombre="10";
 	$scope.sort = function(keyname){
         $scope.sortKey = keyname;
         $scope.reverse = !$scope.reverse;

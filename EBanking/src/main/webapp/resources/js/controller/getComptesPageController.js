@@ -1,4 +1,5 @@
 app.controller('getComptesPageController', function($scope, $http) {
+	$scope.nombre="10";
 	$scope.init = function(idClient) {
         $scope.idClient = idClient;
     }

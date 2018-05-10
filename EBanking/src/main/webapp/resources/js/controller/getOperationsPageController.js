@@ -1,4 +1,5 @@
 app.controller('getOperationsPageController', function($scope, $http, $routeParams) {
+	$scope.nombre="10";
 	$scope.rib = $routeParams.rib;
 	$scope.recherche='aucun';
 	$scope.sortKey = "dateOperation";
