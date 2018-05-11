@@ -31,19 +31,26 @@ app.controller('setVirementIntraPageController', function($scope, $http, $window
 	
 	$scope.submitVirement = function(ev) {
 		if($scope.ribexpediteur.rib == $scope.ribdestinataire.rib)
+		{
 			$scope.reponse = "ribdestinataire doit etre different du ribexpediteur";
+			$scope.class="error";
+		}
 		else{
 		if($scope.VirementForm.montant <= $scope.ribexpediteur.solde)
 		{
 			$scope.showPrompt(ev);
 		}
 		else
+		{
 			$scope.reponse = "montant doit etre inferieur au solde du ribexpediteur";
+			$scope.class="error";
+		}
 		}
 	}
 	function _success(response) {
 		//$window.location.href = '/EBanking/';
 		_refreshForm();
+		$scope.class="msg";
 		$scope.reponse = "Votre virement a reussi.";
         console.log(response.statusText);
     }
@@ -128,7 +135,8 @@ app.controller('setVirementIntraPageController', function($scope, $http, $window
     	    }).then(function() {
     	        $scope.virement();
     	    }, function() {
-    	      $scope.reponse = "Vous avez besoin d'entrer le mot de passe.";
+    	    	$scope.class="error";
+    	        $scope.reponse = "Vous avez besoin d'entrer le mot de passe.";
     	    });
     };
 })

@@ -38,7 +38,8 @@ app.controller('getCmdChequierPageController', function($scope, $http, $window) 
 	        }).then( _success, _error );
 	}
 	function _success(response) {
-		$window.location.href = '/EBanking/';
+		//$window.location.href = '/EBanking/';
+		$scope.reponse="Commande chequier ajoutee";
     	_refreshForm();
         console.log(response.statusText);
     }
@@ -49,7 +50,7 @@ app.controller('getCmdChequierPageController', function($scope, $http, $window) 
 	_refreshForm = function()
 	{
 		$scope.cmdChequierForm.nombre="";
-		$scope.cmdChequierForm.rib="";
+		$scope.rib="";
 	}
 	$scope.reset = function() {
     	_refreshForm();

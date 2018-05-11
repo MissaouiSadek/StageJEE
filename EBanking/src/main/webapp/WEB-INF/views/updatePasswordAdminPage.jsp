@@ -13,10 +13,9 @@
 			<td>Confirmer Nouvelle Mot de passe</td>
 			<td><input type="password" pattern="[0-9]*" inputmode="numeric" name="confirmPassword" ng-model="PasswordForm.confirmPassword" class="form-control" required /></td>
 		</tr>
-		<tr>
-			<td><input type="submit" value="Submit" ng-disabled="myForm.$invalid" class="btn btn-primary btn-sm" />
-			<button type="button" ng-click="reset()" class="btn btn-warning btn-sm">Réinitialiser</button></td>
-		</tr>
 	</table>
-	<label ng-bind="answer"></label>
+	<input type="submit" value="Submit" ng-disabled="myForm.$invalid" class="btn btn-primary btn-sm" />
+	<button type="button" ng-click="reset()" class="btn btn-warning btn-sm">Réinitialiser</button>
 </form>
+<br/>
+<label ng-class="class" ng-bind="answer"></label>

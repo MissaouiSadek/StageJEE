@@ -19,6 +19,6 @@
 			<input type='submit' value='submit' class='btn btn-primary btn-sm'  />
 		</div>
 </form>
-<label ng-bind="reponse2"></label>
+<label style="color : red" ng-bind="reponse2"></label>
 <br/>
 </md-dialog-content></md-dialog>

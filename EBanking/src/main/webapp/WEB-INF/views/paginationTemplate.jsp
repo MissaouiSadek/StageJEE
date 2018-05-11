@@ -20,7 +20,7 @@
         </a>
       </li>
       <li class="page-item" ng-if="boundaryLinks"  ng-class="{ disabled : pagination.current == pagination.last }">
-        <a class="page-link" href="#" aria-label="Next" ng-click="setCurrent(pagination.last)">
+        <a class="page-link" href="" aria-label="Next" ng-click="setCurrent(pagination.last)">
           <span aria-hidden="true">&raquo;</span>
           <span class="sr-only">Last</span>
         </a>

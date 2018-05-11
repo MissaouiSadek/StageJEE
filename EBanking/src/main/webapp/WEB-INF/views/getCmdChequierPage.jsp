@@ -15,9 +15,9 @@
 					<option value=100>100</option>
 				</select></td>
 			</tr>
-		<tr>
-			<td><input type="submit" value="Submit" ng-disabled="myForm.$invalid" class="btn btn-primary btn-sm" />
-			<button type="button" ng-click="reset()" class="btn btn-warning btn-sm">Réinitialiser Form</button></td>
-		</tr>
 	</table>
+	<input type="submit" value="Submit" ng-disabled="myForm.$invalid" class="btn btn-primary btn-sm" />
+	<button type="button" ng-click="reset()" class="btn btn-warning btn-sm">Réinitialiser Form</button>
 </form>
+<br/>
+<label ng-show="reponse" class="msg" ng-bind="reponse"></label>

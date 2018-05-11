@@ -53,7 +53,10 @@ app.controller('setVirementInterPageController', function($scope, $http, $window
 					$scope.showPrompt(ev);
 		}
 		else
+		{
 			$scope.reponse = "montant doit etre inferieur au solde du ribexpediteur";
+			$scope.class="error";
+		}
 	}
 	
 	$scope.verifCode = function()
@@ -97,6 +100,7 @@ app.controller('setVirementInterPageController', function($scope, $http, $window
 	function _success(response) {
 		//$window.location.href = '/EBanking/';
 		$scope.reponse = "Votre virement a reussi.";
+		$scope.class="msg";
 		_refreshForm();
         console.log(response.statusText);
     }
@@ -148,7 +152,8 @@ app.controller('setVirementInterPageController', function($scope, $http, $window
    	    }).then(function() {
    	        $scope.virement();
    	    }, function() {
-   	      $scope.reponse = "Vous avez besoin d'entrer le mot de passe.";
+   	    	$scope.class="error";
+   	        $scope.reponse = "Vous avez besoin d'entrer le mot de passe.";
    	    });
    };
    
@@ -166,6 +171,7 @@ app.controller('setVirementInterPageController', function($scope, $http, $window
 	   	        $scope.virement2();
 	   	    }, function() {
 	   	      $scope.reponse = "Vous avez besoin d'entrer la code de validation.";
+	   	      $scope.class="error";
 	   	    });
 	   };
 })

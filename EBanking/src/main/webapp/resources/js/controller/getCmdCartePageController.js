@@ -38,7 +38,8 @@ app.controller('getCmdCartePageController', function($scope, $http, $window) {
 	        }).then( _success, _error );
 	}
 	function _success(response) {
-		$window.location.href = '/EBanking/';
+		//$window.location.href = '/EBanking/';
+		$scope.reponse="Commande carte ajoutee";
     	_refreshForm();
         console.log(response.statusText);
     }
@@ -49,7 +50,7 @@ app.controller('getCmdCartePageController', function($scope, $http, $window) {
 	_refreshForm = function()
 	{
 		$scope.cmdCarteForm.type="";
-		$scope.cmdCarteForm.rib="";
+		$scope.rib="";
 	}
 	$scope.reset = function() {
     	_refreshForm();

@@ -1,5 +1,5 @@
 <%@ page isELIgnored="false"%>
-<h1>Liste Commandes Chéquier</h1>
+<h4>Liste Commandes Chéquier</h4>
 <div ng-init="init('${idClient}')"></div>
 <form class="form-inline">
         <div class="form-group">

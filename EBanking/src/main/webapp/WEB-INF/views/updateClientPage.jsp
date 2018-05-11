@@ -40,9 +40,7 @@
 				<td><input type="text" name="telephone" ng-model="clientForm.telephone" class="form-control" required /></td>
 				<td><span ng-show="myForm.$dirty && myForm.telephone.$error.required">Telephone ne doit pas etre vide</span></td>
 			</tr>
-		<tr>
-			<td><input type="submit" value="Submit" ng-disabled="myForm.$invalid" class="btn btn-primary btn-sm" />
-			<button type="button" ng-click="reset()" class="btn btn-warning btn-sm">Réinitialiser</button></td>
-		</tr>
 	</table>
+	<input type="submit" value="Submit" ng-disabled="myForm.$invalid" class="btn btn-primary btn-sm" />
+	<button type="button" ng-click="reset()" class="btn btn-warning btn-sm">Réinitialiser</button>
 </form>

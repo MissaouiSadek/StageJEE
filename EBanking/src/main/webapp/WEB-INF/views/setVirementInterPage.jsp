@@ -28,10 +28,9 @@
 				<td>motif</td>
 				<td><input type="text" name="motif" ng-model="VirementForm.motif" class="form-control" required /></td>
 			</tr>
-			<tr>
-			<td><input type="submit" value="Submit" ng-disabled="myForm.$invalid" class="btn btn-primary btn-sm" />
-			<button type="button" ng-click="reset()" class="btn btn-warning btn-sm">Réinitialiser Form</button></td>
-		</tr>
 	</table>
-	<label ng-bind="reponse"></label>
+	<input type="submit" value="Submit" ng-disabled="myForm.$invalid" class="btn btn-primary btn-sm" />
+	<button type="button" ng-click="reset()" class="btn btn-warning btn-sm">Réinitialiser Form</button>
 </form>
+<br/>
+<label ng-show="reponse" ng-class="class" ng-bind="reponse"></label>

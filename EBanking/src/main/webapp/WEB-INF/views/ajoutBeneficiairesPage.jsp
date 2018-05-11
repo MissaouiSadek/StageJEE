@@ -1,7 +1,4 @@
-<h1>Beneficiaires</h1>
-<br/>
-<br/>
-<br/>
+<h4>Beneficiaires</h4>
 <form class="form-inline">
         <div class="form-group">
             <label >Recherche</label>

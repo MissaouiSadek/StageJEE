@@ -19,15 +19,22 @@ app.controller('abonnePasswordController', function($scope, $http, $window) {
 		}
 		else
 		{
+			$scope.class="error";
 			$scope.answer= "nouvelle mot de passe et son confirmation doit etre identiques";
 		}
     };
     
     function _success(response) {
     	if(response.data)
-    		$window.location.href = '/EBanking/abonne';
+    	{
+    		$scope.class="msg";
+    		$scope.answer= "Mise a jour reussie";
+    	}
     	else
+    	{
+    		$scope.class="error";
     		$scope.answer= "Ancienne mot de passe fausse";
+    	}
         _refreshForm();
         console.log(response.statusText);
     }

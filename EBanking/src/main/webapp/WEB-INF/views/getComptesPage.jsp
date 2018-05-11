@@ -1,6 +1,6 @@
 <%@ page isELIgnored="false"%>
 <div ng-init="init('${idClient}')"></div>
-<h1>Comptes</h1>
+<h4>Comptes</h4>
 <form class="form-inline">
         <div class="form-group">
             <label >Recherche</label>

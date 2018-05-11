@@ -133,7 +133,7 @@ function formSubmit() {
       </div>
     </footer>
     <!-- Scroll to Top Button-->
-    <a class="scroll-to-top rounded" href="#page-top">
+    <a class="scroll-to-top rounded" direction="#page-top" href="">
       <i class="fa fa-angle-up"></i>
     </a>
     <!-- Logout Modal-->

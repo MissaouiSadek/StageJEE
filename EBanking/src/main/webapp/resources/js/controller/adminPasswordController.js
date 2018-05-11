@@ -19,15 +19,22 @@ app.controller('adminPasswordController', function($scope, $http, $window) {
 		}
 		else
 		{
+			$scope.class="error";
 			$scope.answer= "nouveau mot de passe et son confirmation doivent etre identiques";
 		}
     };
     
     function _success(response) {
     	if(response.data)
-    		$window.location.href = '/EBanking/admin';
+    	{
+    		$scope.class="msg";
+    		$scope.answer= "Mise a jour reussie";
+    	}
     	else
+    	{
+    		$scope.class="error";
     		$scope.answer= "Ancienne mot de passe fausse";
+    	}
         _refreshForm();
         console.log(response.statusText);
     }

@@ -24,12 +24,9 @@
 				ng-model="VirementForm.montant" class="form-control"
 				inputmode="numeric" ng-min=0 ng-max=ribexpediteur.solde required /></td>
 		</tr>
-		<tr>
-			<td><input type="submit" value="Submit"
-				ng-disabled="myForm.$invalid" class="btn btn-primary btn-sm" />
-				<button type="button" ng-click="reset()"
-					class="btn btn-warning btn-sm">Réinitialiser Form</button></td>
-		</tr>
 	</table>
-	<label ng-bind="reponse"></label>
+	<input type="submit" value="Submit"	ng-disabled="myForm.$invalid" class="btn btn-primary btn-sm" />
+	<button type="button" ng-click="reset()" class="btn btn-warning btn-sm">Réinitialiser Form</button>
 </form>
+<br/>
+<label ng-show="reponse" ng-class="class">{{reponse}}</label>
