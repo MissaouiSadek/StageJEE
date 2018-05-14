@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  ven. 11 mai 2018 à 10:28
+-- Généré le :  lun. 14 mai 2018 à 12:16
 -- Version du serveur :  5.7.19-log
 -- Version de PHP :  7.0.23
 
@@ -67,7 +67,7 @@ CREATE TABLE IF NOT EXISTS `cmdcarte` (
   PRIMARY KEY (`idCmdCarte`),
   KEY `idClient` (`idClient`),
   KEY `cmdcarte_ibfk_2` (`RIB`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `cmdcarte`
@@ -75,8 +75,9 @@ CREATE TABLE IF NOT EXISTS `cmdcarte` (
 
 INSERT INTO `cmdcarte` (`idCmdCarte`, `type`, `statut`, `RIB`, `idClient`) VALUES
 (1, 'Gold', 'disponible', '30004000031234567890143', 'BFI12345'),
-(2, 'Platinum', 'en cours d\'impression', '30002005500000157841343', 'BFI12345'),
-(4, 'Premier', 'en cours d\'impression', '30004000031234567890143', 'BFI12345');
+(2, 'Platinum', 'disponible', '30002005500000157841343', 'BFI12345'),
+(4, 'Premier', 'en cours d\'impression', '30004000031234567890143', 'BFI12345'),
+(18, 'Platinum', 'en cours d\'impression', '30002005500000157841343', 'BFI12345');
 
 -- --------------------------------------------------------
 
@@ -94,16 +95,17 @@ CREATE TABLE IF NOT EXISTS `cmdchequier` (
   PRIMARY KEY (`idCmdChequier`),
   KEY `Abonne_idClient` (`idClient`),
   KEY `cmdchequier_ibfk_2` (`RIB`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `cmdchequier`
 --
 
 INSERT INTO `cmdchequier` (`idCmdChequier`, `statut`, `nombre`, `idClient`, `RIB`) VALUES
-(1, 'en cours d\'impression', 25, 'BFI12345', '30004000031234567890143'),
+(1, 'disponible', 25, 'BFI12345', '30004000031234567890143'),
 (2, 'disponible', 50, 'BFI12345', '30002005500000157841343'),
-(5, 'en cours d\'impression', 25, 'BFI12345', '30002005500000157841343');
+(5, 'en cours d\'impression', 25, 'BFI12345', '30002005500000157841343'),
+(12, 'en cours d\'impression', 25, 'BFI12345', '30004000031234567890143');
 
 -- --------------------------------------------------------
 

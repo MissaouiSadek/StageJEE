@@ -1,7 +1,7 @@
 <h4>Beneficiaires</h4>
-<form class="form-inline">
+<form class="form-inline container">
         <div class="form-group">
-            <label >Recherche</label>
+            <label>Recherche&nbsp</label>
             <input type="text" ng-model="search" class="form-control" placeholder="Rechercher">
         </div>
 </form>
@@ -40,22 +40,31 @@
 </div>
 <br/>
 <div class="formcontainer">
-	<form ng-submit="submitBeneficiaire()" name="myForm" class="form-horizontal" novalidate>
+	<form ng-submit="submitBeneficiaire()" name="myForm" class="form-horizontal container" novalidate>
 		<table>
 			<tr>
 				<td>RIB</td>
-				<td><input type="text" name="rib" ng-model="beneficiaireForm.rib" class="form-control" required /></td>
-				<td><span ng-show="myForm.$dirty && myForm.rib.$error.required">RIB ne doit pas etre vide</span></td>
+				<td><input type="text" name="rib" ng-model="beneficiaireForm.rib" class="form-control col1" required /></td>
+			</tr>
+			<tr>
+				<td>&nbsp</td>
+				<td><span ng-show="myForm.$dirty && myForm.rib.$error.required" class="cont">*RIB ne doit pas être vide</span></td>
 			</tr>
 			<tr>
 				<td>Nom</td>
-				<td><input type="text" name="nom" ng-model="beneficiaireForm.nom" class="form-control" required /></td>
-				<td><span ng-show="myForm.$dirty && myForm.nom.$error.required">Nom ne doit pas etre vide</span></td>
+				<td><input type="text" name="nom" ng-model="beneficiaireForm.nom" class="form-control col1" required /></td>
+			</tr>
+			<tr>
+				<td>&nbsp</td>
+				<td><span ng-show="myForm.$dirty && myForm.nom.$error.required" class="cont">*Nom ne doit pas être vide</span></td>
 			</tr>
 			<tr>
 				<td>Prenom</td>
-				<td><input type="text" name="prenom" ng-model="beneficiaireForm.prenom" class="form-control" required /></td>
-				<td><span ng-show="myForm.$dirty && myForm.prenom.$error.required">Prenom ne doit pas etre vide</span></td>
+				<td><input type="text" name="prenom" ng-model="beneficiaireForm.prenom" class="form-control col1" required /></td>
+			</tr>
+			<tr>
+				<td>&nbsp</td>
+				<td><span ng-show="myForm.$dirty && myForm.prenom.$error.required" class="cont">*Prenom ne doit pas être vide</span></td>
 			</tr>
 			<tr>
 				<td>Statut</td>
@@ -63,13 +72,13 @@
 					<option value="Valide">Valide</option>
 					<option value="Invalide">Invalide</option>
 				</select></td>
-				<td><span ng-show="myForm.$dirty && myForm.statut.$error.required">Statut ne doit pas etre vide</span></td>
 			</tr>
-			<tr><td>&nbsp</td></tr>
 			<tr>
-				<td><input type="submit" value="Add/Edit" ng-disabled="myForm.$invalid" class="btn btn-primary btn-sm" />
-				<button type="button" ng-click="reset()" class="btn btn-warning btn-sm">Réinitialiser</button></td>
+				<td>&nbsp</td>
+				<td><span ng-show="myForm.$dirty && myForm.statut.$error.required" class="cont">*Statut ne doit pas être vide</span></td>
 			</tr>
 		</table>
+		<input type="submit" value="Add/Edit" ng-disabled="myForm.$invalid" class="btn btn-primary btn-sm" />
+		<button type="button" ng-click="reset()" class="btn btn-warning btn-sm">Réinitialiser</button>
 	</form>
 </div>

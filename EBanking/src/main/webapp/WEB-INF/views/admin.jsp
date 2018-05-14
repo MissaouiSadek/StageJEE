@@ -112,7 +112,7 @@ function formSubmit() {
       <div class="row">
         <div class="col-12">
           	<div ng-view></div>
-			<script src="resources/js/controller/abonnePasswordController.js"></script>
+			<script src="resources/js/controller/adminPasswordController.js"></script>
 			<script src="resources/js/controller/clientUpdateController.js"></script>
         </div>
       </div>

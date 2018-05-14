@@ -11,10 +11,6 @@ th {
 	cursor: pointer;
 }
 
-td {
-	text-align: center;
-}
-
 #dialogContainer {
 	top :0;
 }
@@ -37,4 +33,13 @@ td {
 	color: #31708f;
 	background-color: #d9edf7;
 	border-color: #bce8f1;
+}
+
+.col1 {
+	width: 390%;
+}
+
+.cont {
+	color : maroon;
+	font-size : 75%;
 }

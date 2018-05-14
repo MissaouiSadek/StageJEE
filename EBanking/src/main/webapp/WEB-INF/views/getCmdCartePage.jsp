@@ -20,4 +20,4 @@
 	<button type="button" ng-click="reset()" class="btn btn-warning btn-sm">Réinitialiser Form</button>
 </form>
 <br/>
-<label ng-show="reponse=='Commande carte ajoutee'" class="msg" ng-bind="reponse"></label>
+<label ng-show="reponse" ng-class="class" ng-bind="reponse"></label>

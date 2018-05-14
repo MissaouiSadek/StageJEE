@@ -22,23 +22,50 @@ app.controller('getCmdChequierPageController', function($scope, $http, $window) 
         }, function errorCallback(response) {
             console.log(response.statusText);
         });
+        $http({
+            method : 'GET',
+            url : 'http://localhost:8180/EBankingSI/rest/getCmdsChequierByClient/'+$scope.idClient
+        }).then(function successCallback(response) {
+            $scope.cmdsChequier = response.data;
+        }, function errorCallback(response) {
+            console.log(response.statusText);
+        });
     }
 	_refreshRIB();
 	$scope.submitCmd = function() {
 			$scope.cmdChequierForm.statut="en cours d'impression";
 			$scope.cmdChequierForm.client=$scope.client;
 			$scope.cmdChequierForm.compte=$scope.rib;
-			$http({
-	            method : 'POST',
-	            url : 'http://localhost:8180/EBankingSI/rest/addCmdChequier',
-	            data : angular.toJson($scope.cmdChequierForm),
-	            headers : {
-	                'Content-Type' : 'application/json'
-	            }
-	        }).then( _success, _error );
+			var bool = true;
+			var totalCmdsChequier = $scope.cmdsChequier.length;
+			for(var i=0;i<totalCmdsChequier;i++)
+			{
+				if(($scope.cmdsChequier[i].compte.rib==$scope.cmdChequierForm.compte.rib)&&($scope.cmdsChequier[i].statut!="disponible"))
+				{
+					bool=false;
+					break;
+				}
+			}
+			if(bool)
+			{
+				$http({
+		            method : 'POST',
+		            url : 'http://localhost:8180/EBankingSI/rest/addCmdChequier',
+		            data : angular.toJson($scope.cmdChequierForm),
+		            headers : {
+		                'Content-Type' : 'application/json'
+		            }
+		        }).then( _success, _error );
+			}
+			else
+			{
+				$scope.reponse = "Cette compte a deja une commande";
+				$scope.class="error";
+			}
 	}
 	function _success(response) {
 		//$window.location.href = '/EBanking/';
+		$scope.class="msg";
 		$scope.reponse="Commande chequier ajoutee";
     	_refreshForm();
         console.log(response.statusText);

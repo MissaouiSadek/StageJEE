@@ -18,9 +18,9 @@
 <br/>
 <br/>
 <br/>
-<form class="form-inline">
+<form class="form-inline container">
         <div class="form-group">
-            <label>Recherche</label>
+            <label>Recherche&nbsp</label>
             <input type="text" ng-model="search" class="form-control" placeholder="Search">
         </div>
 </form>

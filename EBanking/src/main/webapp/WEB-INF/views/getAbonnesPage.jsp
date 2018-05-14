@@ -18,9 +18,9 @@
 <br/>
 <br/>
 <br/>
-<form class="form-inline">
+<form class="form-inline container">
         <div class="form-group">
-            <label >Recherche</label>
+            <label>Recherche&nbsp</label>
             <input type="text" ng-model="search" class="form-control" placeholder="Search">
         </div>
 </form>
@@ -60,34 +60,43 @@
 </div>
 <br/>
 <div class="formcontainer">
-	<form ng-submit="submitAbonne()" name="myForm" class="form-horizontal" novalidate>
+	<form ng-submit="submitAbonne()" name="myForm" class="form-horizontal container" novalidate>
 		<table>
 			<tr>
 				<td>Id Client</td>
-				<td><input type="text" name="idClient" ng-model="abonneForm.idClient" class="form-control" required /></td>
-				<td><span ng-show="myForm.$dirty && myForm.idClient.$error.required">idClient ne doit pas etre vide</span></td>
+				<td><input type="text" name="idClient" ng-model="abonneForm.idClient" class="form-control col1" required /></td>
+			</tr>
+			<tr>
+				<td>&nbsp</td>
+				<td><span ng-show="myForm.$dirty && myForm.idClient.$error.required" class="cont">*idClient ne doit pas être vide</span></td>
 			</tr>
 			<tr>
 				<td>Code Abonne</td>
-				<td><input type="text" name="codeAbonne" ng-model="abonneForm.codeAbonne" class="form-control" required /></td>
-				<td><span ng-show="myForm.$dirty && myForm.codeAbonne.$error.required">Code Abonne ne doit pas etre vide</span></td>
+				<td><input type="text" name="codeAbonne" ng-model="abonneForm.codeAbonne" class="form-control col1" required /></td>
+			</tr>
+			<tr>
+				<td>&nbsp</td>
+				<td><span ng-show="myForm.$dirty && myForm.codeAbonne.$error.required" class="cont">*Code Abonne ne doit pas être vide</span></td>
 			</tr>
 			<tr>
 				<td>Password (Cryptage auto)</td>
-				<td><input type="text" name="passwordAbonne" ng-model="abonneForm.passwordAbonne" class="form-control" required /></td>
-				<td><span ng-show="myForm.$dirty && myForm.passwordAbonne.$error.required">Password ne doit pas etre vide</span></td>
+				<td><input type="text" name="passwordAbonne" ng-model="abonneForm.passwordAbonne" class="form-control col1" required /></td>
+			</tr>
+			<tr>
+				<td>&nbsp</td>
+				<td><span ng-show="myForm.$dirty && myForm.passwordAbonne.$error.required" class="cont">*Password ne doit pas être vide</span></td>
 			</tr>
 			<tr>
 				<td>Date de Creation</td>
-				<td><input type="text" name="dateCreation" ng-model="abonneForm.dateCreation" placeholder="yyyy-MM-dd" ng-pattern="/^(?:19|20)[0-9]{2}-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-9])|(?:(?!02)(?:0[1-9]|1[0-2])-(?:30))|(?:(?:0[13578]|1[02])-31))$/" class="form-control" required /></td>
-				<td><span ng-show="myForm.$dirty && myForm.dateCreation.$error.pattern">Date de Creation doit etre sous format : yyyy-MM-dd</span>
-				<span ng-show="myForm.$dirty && myForm.dateCreation.$error.required">Date de Creation ne doit pas etre vide</span></td>
+				<td><input type="text" name="dateCreation" ng-model="abonneForm.dateCreation" placeholder="yyyy-MM-dd" ng-pattern="/^(?:19|20)[0-9]{2}-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-9])|(?:(?!02)(?:0[1-9]|1[0-2])-(?:30))|(?:(?:0[13578]|1[02])-31))$/" class="form-control col1" required /></td>
 			</tr>
-			<tr><td>&nbsp</td></tr>
 			<tr>
-				<td><input type="submit" value="Add/Edit" ng-disabled="myForm.$invalid" class="btn btn-primary btn-sm" />
-				<button type="button" ng-click="reset()" class="btn btn-warning btn-sm">Réinitialiser</button></td>
+				<td>&nbsp</td>
+				<td><span ng-show="myForm.$dirty && myForm.dateCreation.$error.pattern" class="cont">*Date de Creation doit être sous format : yyyy-MM-dd</span>
+				<span ng-show="myForm.$dirty && myForm.dateCreation.$error.required" class="cont">*Date de Creation ne doit pas être vide</span></td>
 			</tr>
 		</table>
+		<input type="submit" value="Add/Edit" ng-disabled="myForm.$invalid" class="btn btn-primary btn-sm" />
+		<button type="button" ng-click="reset()" class="btn btn-warning btn-sm">Réinitialiser</button>
 	</form>
 </div>
